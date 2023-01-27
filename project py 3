@@ -1,0 +1,24 @@
+import random
+
+# Function to simulate a single roll of a die
+def roll_die():
+    return random.randint(1, 6)
+
+# Run simulation
+num_trials = 10000
+roll_count = 0
+total_rolls = 0
+
+while num_trials > 0:
+    roll_count = 0
+    while True:
+        roll = roll_die()
+        roll_count += 1
+        if roll == 6:
+            break
+    total_rolls += roll_count
+    num_trials -= 1
+
+# Report results
+average_rolls = total_rolls / 10000
+print("Average number of rolls before getting a 6:", average_rolls)
