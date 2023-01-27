@@ -1,0 +1,54 @@
+########
+#main
+#######
+def start():
+  print("You are a brave adventurer, exploring a mysterious cave.")
+  print("Suddenly, you come to a fork in the path. Do you go left or right?")
+  choice = input("Type 'left' or 'right' to continue: ")
+  
+  if choice == "left":
+    left_path()
+  elif choice == "right":
+    right_path()
+  else:
+    dead("You hesitated and were unable to make a choice, and were eaten by a grue.")
+
+def left_path():
+  print("You choose the left path, and come across a rickety old bridge.")
+  print("Do you attempt to cross it, or turn back?")
+  choice = input("Type 'cross' or 'turn back' to continue: ")
+  
+  if choice == "cross":
+    print("You successfully cross the bridge and continue your journey.")
+  elif choice == "turn back":
+    start()
+  else:
+    dead("You hesitated and fell off the bridge, plummeting to your death.")
+
+def right_path():
+  print("You choose the right path, and come across a vicious looking dragon.")
+  print("Do you try to fight it, or run away?")
+  choice = input("Type 'fight' or 'run away' to continue: ")
+  
+  if choice == "fight":
+    dead("You bravely attempt to fight the dragon, but it proves to be too powerful and you are killed.")
+  elif choice == "run away":
+    print("You manage to escape the dragon, and continue your journey.")
+  else:
+    dead("You hesitated and were unable to make a choice, and were roasted by the dragon's fire.")
+
+def dead(message):
+  print(message)
+  print("Game over!")
+
+start()
+
+
+
+
+
+#TODO: Add some global variables
+haveCup = False
+cupIsFull = False
+day = 0
+minutes = 0
